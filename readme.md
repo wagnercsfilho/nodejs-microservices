@@ -10,5 +10,8 @@
 ### Run
 - docker-compose up --build
 
+### Queues
+- localhost:15672
+
 ### Test
 - [PROJECT_PATH]/npm run test
