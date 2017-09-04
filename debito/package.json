@@ -1,0 +1,25 @@
+{
+    "name": "debito",
+    "version": "0.0.1",
+    "scripts": {
+        "test": "mocha -R spec src/**/*.spec.js",
+        "start": "node ./src"
+    },
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "compression": "^1.7.0",
+        "cors": "^2.8.4",
+        "express": "^4.15.4",
+        "helmet": "^3.8.1",
+        "mongoose": "^4.11.9",
+        "morgan": "^1.8.2",
+        "nodemon": "^1.11.0"
+    },
+    "devDependencies": {
+        "eslint": "^3.13.1",
+        "mocha": "^3.2.0",
+        "should": "^11.1.2",
+        "standard": "^8.6.0",
+        "supertest": "^2.0.1"
+    }
+}

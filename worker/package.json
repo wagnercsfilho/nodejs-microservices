@@ -1,0 +1,11 @@
+{
+    "name": "worker",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "node ./src"
+    },
+    "dependencies": {
+        "amqplib": "^0.5.1",
+        "axios": "^0.16.2"
+    }
+}

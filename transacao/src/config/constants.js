@@ -1,0 +1,4 @@
+module.exports = {
+  DEC_CPC_ACCOUNT: 'DEC_CPC_ACCOUNT',
+  INC_COUNT_CLICK_AD: 'INC_COUNT_CLICK_AD',
+};

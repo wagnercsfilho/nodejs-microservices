@@ -1,0 +1,67 @@
+version: '2'
+services:
+  rabbitmq:
+    image: 'rabbitmq:3-management'
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 25672:25672
+  mongo:  
+    image: mongo:latest 
+    ports:
+      - "27017:27017"  
+    volumes_from:
+      - mongodata
+    restart: always
+  mongodata:
+    image: tianon/true
+    volumes:
+      - /data/db
+  worker:
+    build: ./worker
+    command:  bash -c "npm install; nodemon ./src --color=always"
+    volumes:
+      - ./worker:/home/worker
+    links:
+      - rabbitmq
+    depends_on:
+      - rabbitmq
+  debito:
+    build: ./debito
+    command:  bash -c "npm install; npm run test; nodemon ./src --color=always"
+    environment:
+      PORT: 4000
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./debito:/home/api
+    links:
+      - mongo
+  estatistica:
+    build: ./estatistica
+    command:  bash -c "npm install; nodemon ./src --color=always"
+    environment:
+      PORT: 4000
+    ports:
+      - "5000:4000"
+    volumes:
+      - ./estatistica:/home/api
+    links:
+      - mongo
+  transacao:
+    build: ./transacao
+    command:  bash -c "npm install; nodemon ./src --color=always"
+    environment:
+      PORT: 4000
+    ports:
+      - "5050:4000"
+    volumes:
+      - ./transacao:/home/api
+    links:
+      - mongo
+      - rabbitmq
+    depends_on:
+      - debito
+      - estatistica
+      - rabbitmq
+      - mongo

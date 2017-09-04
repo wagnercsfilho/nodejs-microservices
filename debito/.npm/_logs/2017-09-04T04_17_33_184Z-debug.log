@@ -1,0 +1,37 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'test' ]
+2 info using npm@5.3.0
+3 info using node@v8.4.0
+4 verbose config Skipping project config: /home/api/.npmrc. (matches userconfig)
+5 verbose run-script [ 'pretest', 'test', 'posttest' ]
+6 info lifecycle debito@0.0.1~pretest: debito@0.0.1
+7 info lifecycle debito@0.0.1~test: debito@0.0.1
+8 verbose lifecycle debito@0.0.1~test: unsafe-perm in lifecycle true
+9 verbose lifecycle debito@0.0.1~test: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/api/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+10 verbose lifecycle debito@0.0.1~test: CWD: /home/api
+11 silly lifecycle debito@0.0.1~test: Args: [ '-c', 'mocha -R spec src/**/*.spec.js' ]
+12 silly lifecycle debito@0.0.1~test: Returned: code: 3  signal: null
+13 info lifecycle debito@0.0.1~test: Failed to exec test script
+14 verbose stack Error: debito@0.0.1 test: `mocha -R spec src/**/*.spec.js`
+14 verbose stack Exit status 3
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:289:16)
+14 verbose stack     at emitTwo (events.js:125:13)
+14 verbose stack     at EventEmitter.emit (events.js:213:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:125:13)
+14 verbose stack     at ChildProcess.emit (events.js:213:7)
+14 verbose stack     at maybeClose (internal/child_process.js:927:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid debito@0.0.1
+16 verbose cwd /home/api
+17 verbose Linux 4.9.36-moby
+18 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "test"
+19 verbose node v8.4.0
+20 verbose npm  v5.3.0
+21 error code ELIFECYCLE
+22 error errno 3
+23 error debito@0.0.1 test: `mocha -R spec src/**/*.spec.js`
+23 error Exit status 3
+24 error Failed at the debito@0.0.1 test script.
+24 error This is probably not a problem with npm. There is likely additional logging output above.
+25 verbose exit [ 3, true ]
